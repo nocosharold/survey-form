@@ -1,0 +1,23 @@
+<div class="container">
+	<% if flash[:notice] %>
+	<div>
+		<div>
+			<p><%= flash[:notice]%></p>
+		</div>
+	</div>
+	<% end %>
+	<div>
+		<div>
+			<div>
+				<h4>Submitted Information</h4>
+
+				<p>Name: <span><%= @sess_data["name"] %></span></p>
+				<p>Dojo Location: <span><%= @sess_data["location"] %></span></p>
+				<p>Favorite Language: <span><%= @sess_data["language"] %></span></p>
+				<p>Comment: <span><%= @sess_data["comment"] %></span></p>
+
+				<%=link_to 'Back', "/" %>
+			</div>
+		</div>
+	</div>
+</div>

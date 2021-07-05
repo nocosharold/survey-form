@@ -1,0 +1,56 @@
+<script>
+    $(document).ready(function() {
+        $("select").formSelect();
+    });
+</script>
+
+<div>
+    <div>
+        <div>
+            <h2>Survey Form</h2>
+        </div>
+        <form action="/surveys/create" method="post">
+            <!-- <%= form_with url: "surveys/create", method: :post do |form| %> -->
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <div class="row">
+                <div>
+                    <label for="full_name">Full Name</label>
+                    <input id="full_name" type="text" name="survey[name]" />
+                </div>
+            </div>
+
+            <div>
+                <label>Dojo Location</label>
+                <select name="survey[location]">
+                    <option value="" disabled selected></option>
+                    <option value="Pateros">Taguig City</option>
+                    <option value="Taguig City">Makati City</option>
+                    <option value="Pasig City">Manila City</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Favorite Language</label>
+                <select name="survey[language]">
+                    <option value="" disabled selected></option>
+                    <option value="PHP">Python</option>
+                    <option value="Python">Python</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Ruby">Ruby</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="comment">Textarea</label>
+                <br/>
+                <textarea id="comment" name="survey[comment]"></textarea>
+            </div>
+
+            <div>
+                <button type="submit" name="action">
+                    Submit
+                </button>
+            </div>
+            <% end %>
+    </div>
+</div>
